@@ -1,0 +1,25 @@
+{
+  "name": "login.dfe.examples.oidc-client",
+  "version": "0.0.1",
+  "description": "Sample OIDC client for DfE Login",
+  "engines": {
+    "node": "8.x.x"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DFE-Digital/login.dfe.examples.oidc-client.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DFE-Digital/login.dfe.examples.oidc-client/issues"
+  },
+  "homepage": "https://github.com/DFE-Digital/login.dfe.examples.oidc-client#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
