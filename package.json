@@ -7,7 +7,7 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "dev": "settings='./config/login.dfe.examples.oidc-client.dev.json' node src/index.js"
   },
   "repository": {
