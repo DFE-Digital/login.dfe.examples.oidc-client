@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example OIDC Client</title>
+</head>
+<body>
+<header>
+    <h1>Example OIDC Client</h1>
+    <div>
+        <% if (!locals.isLoggedIn) { %>
+        <a href="/auth">Get yourself logged in</a>
+        <% } else { %>
+        <span>Welcome <%=user.name%></span>
+        <% } %>
+    </div>
+</header>
+</body>
+</html>
