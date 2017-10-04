@@ -14,7 +14,7 @@ module.exports.getPassportStrategy = async (logger) => {
 
   return new Strategy({
     client,
-    params: {redirect_uri: 'http://localhost:44302/auth/cb', scope: 'openid profile email'}
+    params: {redirect_uri: `${config.hostingEnvironment.protocol}://${config.hostingEnvironment.host}:${config.hostingEnvironment.port}/auth/cb`, scope: 'openid profile email'}
   }, (tokenset, authUserInfo, done) => {
 
     client.userinfo(tokenset.access_token)
