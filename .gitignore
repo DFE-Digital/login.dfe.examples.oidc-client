@@ -60,5 +60,5 @@ typings/
 
 # dev environment
 .idea
-config
+/config/
 !config/login.dfe.examples.oidc-client.dev.json
