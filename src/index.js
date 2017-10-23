@@ -46,6 +46,8 @@ init = async () => {
     });
   });
 
+  app.use('/public', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
   app.get('/auth', passport.authenticate('oidc'));
   app.get('/auth/cb', passport.authenticate('oidc', { successRedirect: '/', failureRedirect: '/auth' }));
 
