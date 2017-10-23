@@ -21,7 +21,7 @@
     "sessionSecret": "your-magnate-muffler-sonic"
   },
   "identifyingParty": {
-    "url": "https://localhost:4430",
+    "url": "https://demo-login-dfe-oidc.herokuapp.com",
     "clientId": "foo5",
     "clientSecret":"foo5"
   }
