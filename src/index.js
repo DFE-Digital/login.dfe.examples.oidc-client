@@ -11,17 +11,13 @@ const {getPassportStrategy} = require('./Oidc');
 const logger = new (winston.Logger)({
   colors: config.loggerSettings.colors,
   transports: [
-    new (winston.transports.Console)({level: 'info', colorize: true})
-  ]
+    new (winston.transports.Console)({level: 'info', colorize: true}),
+  ],
 });
 
-init = async() =>
-{
+init = async () => {
 
-  passport.use('oidc', await
-  getPassportStrategy(logger);
-)
-  ;
+  passport.use('oidc', await getPassportStrategy(logger));
   passport.serializeUser(function (user, done) {
     done(null, user);
   });
@@ -45,16 +41,15 @@ init = async() =>
   // Setup routes
   app.get('/', (req, res) => {
     res.render('index', {
-    isLoggedIn: req.isAuthenticated(),
-    user: req.user ? req.user : {id: '', name: ''}
+      isLoggedIn: req.isAuthenticated(),
+      user: req.user ? req.user : {id: '', name: ''}
+    });
   });
-})
-  ;
 
-  app.use('/public', express.static(path.join(__dirname, 'public'), {maxAge: 31557600000}));
+  app.use('/public', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
   app.get('/auth', passport.authenticate('oidc'));
-  app.get('/auth/cb', passport.authenticate('oidc', {successRedirect: '/', failureRedirect: '/auth'}));
+  app.get('/auth/cb', passport.authenticate('oidc', { successRedirect: '/', failureRedirect: '/auth' }));
   app.get('/logout', function (req, res) {
     req.logout();
     req.session.destroy(function (err) {
@@ -76,16 +71,14 @@ init = async() =>
 
     server.listen(config.hostingEnvironment.port, function () {
       logger.info(`Dev server listening on https://${config.hostingEnvironment.host}:${config.hostingEnvironment.port}`);
-    });
+    })
   } else {
-    app.listen(process.env.PORT, function () {
+    app.listen(process.env.PORT, function() {
       logger.info(`Dev server listening on http://${config.hostingEnvironment.host}:${process.env.PORT}`);
     });
   }
-}
-;
+};
 
 init().catch((err => {
   logger.error(err);
-}))
-;
+}));
