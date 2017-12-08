@@ -15,8 +15,7 @@ const logger = new (winston.Logger)({
   ]
 });
 
-init = async() =
->
+init = async() =>
 {
 
   passport.use('oidc', await
@@ -44,7 +43,7 @@ init = async() =
   app.set('views', path.resolve(__dirname, 'views'));
 
   // Setup routes
-  app.get('/', (req, res) = > {
+  app.get('/', (req, res) => {
     res.render('index', {
     isLoggedIn: req.isAuthenticated(),
     user: req.user ? req.user : {id: '', name: ''}
@@ -86,7 +85,7 @@ init = async() =
 }
 ;
 
-init().catch((err = > {
+init().catch((err => {
   logger.error(err);
 }))
 ;
