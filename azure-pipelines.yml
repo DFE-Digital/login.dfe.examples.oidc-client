@@ -9,13 +9,13 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '{{ azureRmConnection.Id }}'
+  azureSubscription: 's141d-Pirean.azdo-deployment'
 
   # Web app name
-  webAppName: '{{ webAppName }}'
+  webAppName: 's141d02-pirean-oidcclient'
 
   # Environment name
-  environmentName: '{{ webAppName }}'
+  environmentName: 'dev'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
